@@ -1,0 +1,6 @@
+pydantic~=2.5.3
+pydantic_settings~=2.1.0
+python-dotenv~=1.0.0
+aiogram~=3.2.0
+Babel~=2.14.0
+apscheduler~=3.10.4

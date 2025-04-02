@@ -1,0 +1,6 @@
+psycopg2-binary~=2.9.9
+mypy~=1.8.0
+black~=23.12.1
+types-psycopg2~=2.9.21.20
+
+-r base.txt
