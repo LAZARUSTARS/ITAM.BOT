@@ -5,7 +5,8 @@ create table if not exists telegram_users(
     last_name text,
     language_code text,
     is_premium bool,
-    is_admin bool
+    is_admin bool,
+    timestamp timestamp with time zone default current_timestamp
 );
 create table if not exists coworking(
     id serial primary key,

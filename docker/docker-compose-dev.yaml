@@ -25,6 +25,7 @@ services:
       - ../.env
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - ../postgres/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
     ports:
       - "5432:5432"
   bot:
@@ -35,11 +36,13 @@ services:
       env_file:
         - ../.env
       environment:
-        - "POSTGRES_HOST=localhost"
-        - "POSTGRES_PORT=5322"
-        - "BOT_TOKEN="
+        - "POSTGRES_HOST=postgres"
+        - "POSTGRES_PORT=5432"
+        - "REDIS_HOST=redis"
         - "TZ=Europe/Moscow"
       volumes:
-        - .:/app
+        - ../:/code
       command: python3 src/main.py
-      network_mode: "host"
+      depends_on:
+        - postgres
+        - redis

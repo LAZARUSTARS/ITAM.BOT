@@ -76,15 +76,6 @@
 
 ## Поднятие базы данных
 
-### Через Docker
-
-1. Убедитесь, что у вас установлен Docker и Docker Compose
-2. Перейдите в корневую директорию проекта
-3. Запустите контейнеры:
-   ```bash
-   make docker-up
-   ```
-
 ### Локально
 
 1. Установите PostgreSQL 15
@@ -96,18 +87,6 @@
    ```bash
    psql -d your_db_name -f postgres/create_tables.sql
    ```
-
-## Настройка переменных окружения
-
-Создайте файл `.env` в корневой директории проекта со следующими параметрами:
-
-```env
-POSTGRES_USER=your_user
-POSTGRES_PASSWORD=your_password
-POSTGRES_DB=your_db_name
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-```
 
 ## Проверка подключения
 

@@ -1,0 +1,4 @@
+# Исключить .env файлы
+.env
+.env.local
+.env*.local
